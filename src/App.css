@@ -105,7 +105,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .wrapper .main--title h1 {
     font-size: 5.2rem;
-    /* width: 0; */
     display: block;
     text-wrap: nowrap;
     line-height: 1.2;
@@ -127,39 +126,42 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 2rem;
     transform: rotate(90deg);
     display: inline-block;
-    -webkit-transform: rotate(90deg); /* Safari and Chrome */
-    -moz-transform: rotate(90deg); /* Firefox */
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -o-transform: rotate(90deg); /* Opera */
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
     transform: rotate(90deg);
   }
 
   .date {
-    padding-left: 0;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    /* display: block; */
-    padding-top: 10em;
   }
 
   .date p,
   h3 {
     margin-left: 0;
-    text-align: start;
     font-size: 2rem;
     font-weight: lighter;
     line-height: 0.5;
   }
+
   .date h3 {
     font-size: 2.5rem;
     font-weight: 500;
+    margin-bottom: 1rem;
   }
 
   .date input[type="date"] {
     display: block;
     padding-left: 0;
+    width: 100%;
+    margin-top: 1rem;
   }
 }
