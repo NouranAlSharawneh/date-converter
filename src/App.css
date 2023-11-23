@@ -58,7 +58,7 @@ nav .logo {
 
 .date {
   width: fit-content;
-  margin-left: 5rem;
+  padding-left: 5rem;
   text-align: center;
   display: block;
   padding-top: 14.2em;
@@ -134,10 +134,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: fit-content;
     width: 50%;
     margin: 0 auto;
+    padding-left: 0;
 
     text-align: center;
     display: block;
-    padding-top: 14.2em;
+    padding-top: 10em;
   }
 
   .date p,
