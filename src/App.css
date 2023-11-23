@@ -131,7 +131,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .date {
-    width: fit-content;
     width: 50%;
     margin: 0 auto;
     padding-left: 0;
