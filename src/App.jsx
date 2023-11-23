@@ -18,7 +18,7 @@ export default function App() {
   return (
     <section>
       <NavBar />
-      <img src="../public/image.png" alt="islamic pattern image" />
+      <img src="./public/image.png" alt="islamic pattern image" />
       <Content
         inputDate={inputDate}
         setInputDate={setInputDate}
