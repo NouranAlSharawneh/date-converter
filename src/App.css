@@ -93,6 +93,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media only screen and (max-width: 668px) {
+  section {
+    height: 120vh;
+  }
+
   .wrapper {
     grid-template-columns: 1fr;
     padding-left: 0;
@@ -151,5 +155,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .date h3 {
     font-size: 2.5rem;
     font-weight: 500;
+  }
+
+  .date input[type="date"] {
+    display: block;
+    padding-left: 0;
   }
 }
