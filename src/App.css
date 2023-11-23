@@ -1,6 +1,23 @@
 section {
+  position: relative;
   height: 100vh;
   width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    161deg,
+    rgba(0, 0, 0, 1) 9%,
+    rgba(0, 0, 0, 0.9977240896358543) 55%,
+    rgba(60, 48, 71, 1) 100%
+  );
+}
+
+img {
+  padding-top: 4rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  border-radius: 40px;
 }
 
 nav {
@@ -15,18 +32,23 @@ nav .logo {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 0.7fr;
-  padding: 5rem 0 0 7rem;
+  padding: 0rem 0 0 12rem;
 }
 .wrapper .main--title h1 {
-  font-size: 8.5rem;
+  font-size: 5.5rem;
   width: 85%;
   text-wrap: balance;
-  line-height: 1;
+  line-height: 0.9;
 }
 
 .wrapper .main--title p {
+  margin-top: 0;
   font-size: 2rem;
   font-weight: 100;
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 8px;
 }
 
 .wrapper .main--title span {
@@ -39,7 +61,7 @@ nav .logo {
   margin-left: 5rem;
   text-align: center;
   display: block;
-  padding-top: 15em;
+  padding-top: 14.2em;
 }
 
 .date p,
@@ -50,7 +72,7 @@ h3 {
   line-height: 0.5;
 }
 .date h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
@@ -64,7 +86,69 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: rgba(255, 255, 255, 0.87);
   border: 0;
   border-radius: 8px;
-  width: 29rem;
+  width: 30rem;
+  padding-left: 1rem;
   height: 5rem;
   background-color: #1a1a1a;
+}
+
+@media only screen and (max-width: 668px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .wrapper .main--title h1 {
+    font-size: 5.2rem;
+    /* width: 0; */
+    display: block;
+    text-wrap: nowrap;
+    line-height: 1.2;
+    padding: 0 3rem;
+  }
+
+  img {
+    height: 15%;
+    width: 90%;
+    margin-bottom: 5rem;
+  }
+
+  .wrapper .main--title p {
+    margin-top: 5rem;
+  }
+
+  .wrapper .main--title span {
+    margin: 1rem;
+    font-size: 2rem;
+    transform: rotate(90deg);
+    display: inline-block;
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -o-transform: rotate(90deg); /* Opera */
+    transform: rotate(90deg);
+  }
+
+  .date {
+    width: fit-content;
+    width: 50%;
+    margin: 0 auto;
+
+    text-align: center;
+    display: block;
+    padding-top: 14.2em;
+  }
+
+  .date p,
+  h3 {
+    text-align: start;
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 0.5;
+  }
+  .date h3 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
 }

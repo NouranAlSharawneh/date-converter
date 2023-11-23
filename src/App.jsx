@@ -18,6 +18,7 @@ export default function App() {
   return (
     <section>
       <NavBar />
+      <img src="../public/image 1.png" alt="islamic pattern image" />
       <Content
         inputDate={inputDate}
         setInputDate={setInputDate}
@@ -43,14 +44,14 @@ function Content({ inputDate, setInputDate, onConvertion }) {
   return (
     <div className="wrapper">
       <div className="main--title">
-        <h1>Convert from Gregorian to Higir dates with ease!</h1>
+        <h1>Convert from Gregorian to Higri dates with ease!</h1>
         <p>
           Start now and enter the date <span>&#8680;</span>
         </p>
       </div>
 
       <div className="date">
-        <p>Start Here &#8681;</p>
+        <p>Enter the date &#8681;</p>
         <input
           type="date"
           name="input"
@@ -58,9 +59,6 @@ function Content({ inputDate, setInputDate, onConvertion }) {
           id=""
           onChange={(event) => setInputDate(event.target.value)}
         />
-        {/* Render the Hijri date
-        {<h3>{`${hijriDate.hd}/${hijriDate.hm}/${hijriDate.hy}`}</h3> ||
-          "Please enter"} */}
 
         <DateInfo onConvertion={onConvertion} />
       </div>
@@ -71,5 +69,7 @@ function Content({ inputDate, setInputDate, onConvertion }) {
 function DateInfo({ onConvertion }) {
   const hijriDate = onConvertion();
   if (!hijriDate.hm || !hijriDate.hd || !hijriDate.hy) return;
-  return <h3>{`${hijriDate.hd}/${hijriDate.hm}/${hijriDate.hy}`}</h3>;
+  return (
+    <h3>The Hijri date: {`${hijriDate.hd}/${hijriDate.hm}/${hijriDate.hy}`}</h3>
+  );
 }
