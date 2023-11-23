@@ -113,13 +113,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   img {
-    height: 15%;
+    height: 13%;
     width: 90%;
     margin-bottom: 5rem;
   }
 
   .wrapper .main--title p {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 
   .wrapper .main--title span {
@@ -135,12 +135,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .date {
-    width: 50%;
-    margin: 0 auto;
     padding-left: 0;
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    display: block;
+    /* display: block; */
     padding-top: 10em;
   }
 
