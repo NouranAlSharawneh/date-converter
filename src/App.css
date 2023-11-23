@@ -119,7 +119,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .wrapper .main--title p {
     margin-top: 3rem;
-    margin-bottom: 7rem;
+    /* margin-bottom: 7rem; */
   }
 
   .wrapper .main--title span {
