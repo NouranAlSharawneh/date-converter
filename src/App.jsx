@@ -1,35 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { toHijri } from "hijri-converter";
+import "./App.css";
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  // 2023-11-2
+  // year, month, day
+  // const year = new Date().toLocaleDateString();
+  const [inputDate, setInputDate] = useState("");
 
+  function HandleConvertion() {
+    const array = inputDate.split("-").map((item) => Number(item));
+    // year / month / day
+    console.log(array, "here");
+    const hijri = toHijri(array[0], array[1], array[2]);
+    return { hd: hijri.hd, hy: hijri.hy, hm: hijri.hm };
+  }
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <section>
+      <NavBar />
+      <Content
+        inputDate={inputDate}
+        setInputDate={setInputDate}
+        onConvertion={HandleConvertion}
+      />
+    </section>
+  );
 }
 
-export default App
+function NavBar() {
+  return (
+    <nav>
+      <div className="logo">
+        <h3>Hijri__conv</h3>
+      </div>
+    </nav>
+  );
+}
+
+function Content({ inputDate, setInputDate, onConvertion }) {
+  const hijriDate = onConvertion();
+  console.log(hijriDate);
+  return (
+    <div className="wrapper">
+      <div className="main--title">
+        <h1>Convert from Gregorian to Higir dates with ease!</h1>
+        <p>
+          Start now and enter the date <span>&#8680;</span>
+        </p>
+      </div>
+
+      <div className="date">
+        <p>Start Here &#8681;</p>
+        <input
+          type="date"
+          name="input"
+          value={inputDate}
+          id=""
+          onChange={(event) => setInputDate(event.target.value)}
+        />
+        {/* Render the Hijri date
+        {<h3>{`${hijriDate.hd}/${hijriDate.hm}/${hijriDate.hy}`}</h3> ||
+          "Please enter"} */}
+
+        <DateInfo onConvertion={onConvertion} />
+      </div>
+    </div>
+  );
+}
+
+function DateInfo({ onConvertion }) {
+  const hijriDate = onConvertion();
+  if (!hijriDate.hm || !hijriDate.hd || !hijriDate.hy) return;
+  return <h3>{`${hijriDate.hd}/${hijriDate.hm}/${hijriDate.hy}`}</h3>;
+}
